@@ -15,7 +15,10 @@ class Main extends Sprite {
 		bitmap.x = (stage.stageWidth - bitmap.width) / 2;
 		bitmap.y = (stage.stageHeight - bitmap.height) / 2;
 
-		var spr = new Platform();
-		addChild(spr);
+		var platform = new Platform();
+		addChild(platform);
+
+		var ball = new Ball();
+		addChild(ball);
 	}
 }
