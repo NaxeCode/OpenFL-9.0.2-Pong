@@ -868,7 +868,7 @@ ApplicationMain.main = function() {
 ApplicationMain.create = function(config) {
 	var app = new openfl_display_Application();
 	ManifestResources.init(config);
-	app.meta.h["build"] = "1";
+	app.meta.h["build"] = "4";
 	app.meta.h["company"] = "NaxeCode";
 	app.meta.h["file"] = "OpenFL-9.0.2-Pong";
 	app.meta.h["name"] = "OpenFL 9.0.2 Pong Demo";
@@ -4019,8 +4019,10 @@ var Main = function() {
 	var bitmap = new openfl_display_Bitmap(openfl_utils_Assets.getBitmapData("assets/openfl.png"));
 	bitmap.set_x((this.stage.stageWidth - bitmap.get_width()) / 2);
 	bitmap.set_y((this.stage.stageHeight - bitmap.get_height()) / 2);
-	var spr = new Platform();
-	this.addChild(spr);
+	var platform = new Platform();
+	this.addChild(platform);
+	var ball = new Ball();
+	this.addChild(ball);
 };
 $hxClasses["Main"] = Main;
 Main.__name__ = "Main";
@@ -4038,6 +4040,18 @@ DocumentClass.__name__ = "DocumentClass";
 DocumentClass.__super__ = Main;
 DocumentClass.prototype = $extend(Main.prototype,{
 	__class__: DocumentClass
+});
+var Ball = function() {
+	openfl_display_Sprite.call(this);
+	this.get_graphics().beginFill(16777215);
+	this.get_graphics().drawCircle(0,0,10);
+	this.get_graphics().endFill();
+};
+$hxClasses["Ball"] = Ball;
+Ball.__name__ = "Ball";
+Ball.__super__ = openfl_display_Sprite;
+Ball.prototype = $extend(openfl_display_Sprite.prototype,{
+	__class__: Ball
 });
 var EReg = function(r,opt) {
 	this.r = new RegExp(r,opt.split("u").join(""));
@@ -22577,7 +22591,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 921404;
+	this.version = 619274;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = "lime.utils.AssetCache";

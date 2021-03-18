@@ -32,7 +32,7 @@ class ApplicationMain
 
 		ManifestResources.init(config);
 
-		app.meta["build"] = "1";
+		app.meta["build"] = "4";
 		app.meta["company"] = "NaxeCode";
 		app.meta["file"] = "OpenFL-9.0.2-Pong";
 		app.meta["name"] = "OpenFL 9.0.2 Pong Demo";
