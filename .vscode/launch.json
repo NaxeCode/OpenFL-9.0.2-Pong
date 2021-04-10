@@ -1,0 +1,48 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+      {
+	      "name": "HTML5: Debug",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://127.0.0.1:3000/"
+	},
+	{
+            "name": "OSX: Debug",
+            "type": "hxcpp",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/macos/bin/Poptropica.app/Contents/MacOS/Poptropica"
+	},
+	{
+            "name": "Windows: Debug",
+            "type": "hxcpp",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/windows/bin/Poptropica.exe"
+	},
+	{
+            "name": "Linux: Debug",
+            "type": "hxcpp",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/linux/bin/Poptropica"
+      },
+      {
+            "name": "Build + Debug",
+            "type": "lime",
+            "request": "launch"
+      },
+      {
+            "name": "Debug",
+            "type": "lime",
+            "request": "launch",
+            "preLaunchTask": null
+      },
+      {
+            "name": "Macro",
+            "type": "haxe-eval",
+            "request": "launch"
+      }
+    ]
+}
